@@ -1,0 +1,5 @@
+ourData <- read.csv("myData.csv", TRUE, ",")
+hist(ourData$Consommation_Alcool_Par_Habitant)
+plot(ourData$Consommation_Alcool_Par_Habitant, ourData$Taux_Alphabetisation)
+plot(ourData$Taux_Croissance_Pop, ourData$Consommation_Alcool_Par_Habitant)
+chisq.test(table(ourData$Consommation_Alcool_Par_Habitant, ourData$Taux_Croissance_Pop))
