@@ -1,0 +1,2 @@
+tuna <- read.csv("myData.csv", TRUE, ",")
+head(tuna)
