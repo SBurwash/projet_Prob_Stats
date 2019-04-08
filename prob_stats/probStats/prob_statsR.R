@@ -2,7 +2,7 @@
 ourData <- read.csv("myData.csv", TRUE, ",")
 na_vec <- which(!complete.cases(ourData))
 ourData_noNA<- ourData[-na_vec,]
-ourData_noNA
+n <- length(tauxCroissance)
 
 
 tauxCroissance <- ourData_noNA$Taux_Croissance_Pop
@@ -29,20 +29,39 @@ qqline(tauxCroissanceNoAber, col = "red")
 shapiro.test(tauxCroissanceNoAber)
 
 
+#parameters
+
+Scroissance <- sd(tauxCroissance)
+
+#MOYENNE
+L_moy_croi <- mean(tauxCroissance) - qt(1-0.025,n-1) * Scroissance / sqrt(n)
+U_moy_croi <- mean(tauxCroissance) + qt(1-0.025,n-1) * Scroissance / sqrt(n)
+
+#VARIANCE
+
+L_var_croi <- (n-1)*Scroissance^2/qchisq(1-0.025,n-1)
+U_var_croi <- (n-1)*Scroissance^2/qchisq(0.025,n-1)
 
 
 #Consommation d'alcool
 
-testing <- (consommationAlcool, na.rm = TRUE)
 boxplot(consommationAlcool, col = "blue", horizontal =T)
 hist(consommationAlcool, col = "blue")
 qqnorm(consommationAlcool, main ="Diagramme de probabilités normal - ou Q-Q Plot of x")
 qqline(consommationAlcool, col = "blue")
 
 
-consomAlcoolMean <- mean(consommationAlcool, na.rm=TRUE)
-prob.exp <- dexp(consommationAlcool, consomAlcoolMean)
-chisq.test(consommationAlcool)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
