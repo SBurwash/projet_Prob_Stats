@@ -1,5 +1,5 @@
 #Nos données
-ourData <- read.csv("myData.csv", TRUE, ",")
+ourData <- read.csv("test3.csv", TRUE, ",")
 na_vec <- which(!complete.cases(ourData))
 ourData_noNA<- ourData[-na_vec,]
 n <- length(tauxCroissance)
@@ -78,10 +78,13 @@ qqline(alphabetisationNoAber, col = "green")
 
 
 #Regression lineaire entre le taux dalpha et la conso
-
-linModel <- lm(alphabetisation ~ consommationAlcool)
+hist(tauxCroissanceNoAber)
+linModel <- lm(alphabetisation ~ tauxCroissanceNoAber, data=ourData)
 summary(linModel)
+confint(linModel)
 
+plot(tauxCroissanceNoAber, alphabetisation)
+abline(linModel, col="red")
 
 
 #EXPO
