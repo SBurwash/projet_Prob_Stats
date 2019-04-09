@@ -50,6 +50,8 @@ hist(consommationAlcool, col = "blue")
 qqnorm(consommationAlcool, main ="Diagramme de probabilités normal - ou Q-Q Plot of x")
 qqline(consommationAlcool, col = "blue")
 
+resConso <- boxplot(consommationAlcool, col="green", horizontal = T)
+consoAlcoolNoAcer <- (consommationAlcool[!consommationAlcool %in% resConso$out])
 
 
 
@@ -75,8 +77,16 @@ qqnorm(alphabetisationNoAber, main ="Diagramme de probabilités normal - ou Q-Q 
 qqline(alphabetisationNoAber, col = "green")
 
 
+#Regression lineaire entre le taux dalpha et la conso
+
+linModel <- lm(alphabetisation ~ consommationAlcool)
+summary(linModel)
 
 
+
+#EXPO
+#REGRESSION
+#PARAMETRE - VERIFICATION
 
 
 
