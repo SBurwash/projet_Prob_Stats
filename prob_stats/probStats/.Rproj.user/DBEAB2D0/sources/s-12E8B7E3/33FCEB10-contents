@@ -95,8 +95,8 @@ resAlphabet <- boxplot(alphabetisation, col="green", horizontal = T)
 alphabetisationNoAber <- (alphabetisation[!alphabetisation %in% resAlphabet$out])
 
 boxplot(alphabetisationNoAber, col = "green", horizontal =T, main = "Diagramme en boîte du taux d'alphabétisation", xlab = "Taux d'alphabétisation de la population (%)")
-hist(alphabetisationNoAber, col = "green", xlab = "Taux d'alphabétisation de la population (%)", ylab = "Fréquence", main = "Histogramme de la consommation d'alcool annuelle")
-qqnorm(alphabetisationNoAber, main ="Diagramme quantile-quantile de la consommation d'alcool annuelle par personne", xlab = "Quantile théorique", ylab = "Quantile observé")
+hist(alphabetisationNoAber, col = "green", xlab = "Taux d'alphabétisation de la population (%)", ylab = "Fréquence", main = "Histogramme du taux d'alphabétisation")
+qqnorm(alphabetisationNoAber, main ="Diagramme quantile-quantile du taux d'alphabétisation de la population", xlab = "Quantile théorique", ylab = "Quantile observé")
 qqline(alphabetisationNoAber, col = "green")
 
 shapiro.test(alphabetisationNoAber)
@@ -150,6 +150,8 @@ var.test(d_Europe_alphabet, d_nonEurope_alphabet)
 t.test(d_Europe_alcool, d_nonEurope_alcool)
 t.test(d_Europe_croissance, d_nonEurope_croissance)
 t.test(d_Europe_alphabet, d_nonEurope_alphabet)
+
+
 #Regression lineaire entre le taux dalpha et la conso
 hist(tauxCroissanceNoAber)
 linModel <- lm(alphabetisation ~ tauxCroissanceNoAber, data=ourData)
@@ -159,11 +161,8 @@ confint(linModel)
 plot(tauxCroissanceNoAber, alphabetisation)
 abline(linModel, col="red")
 
-
-#EXPO
-#REGRESSION
-#PARAMETRE - VERIFICATION
-
+par(mfrow = c(2,2))
+plot(linModel)
 
 
 
