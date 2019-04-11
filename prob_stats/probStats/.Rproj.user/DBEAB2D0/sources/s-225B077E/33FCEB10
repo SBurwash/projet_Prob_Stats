@@ -2,18 +2,18 @@
     "collab_server" : "",
     "contents" : "",
     "created" : 1554484559562.000,
-    "dirty" : true,
+    "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
     "hash" : "0",
     "id" : "33FCEB10",
-    "lastKnownWriteTime" : 1554856400,
-    "last_content_update" : 1554856682100,
+    "lastKnownWriteTime" : 1554952067,
+    "last_content_update" : 1554952067612,
     "path" : "C:/Users/sburw/Documents/École/Session4/MTH2302D/Projet de prob/projet_Prob_Stats/prob_stats/probStats/prob_statsR.R",
     "project_path" : "prob_statsR.R",
     "properties" : {
-        "cursorPosition" : "165,0",
-        "scrollLine" : "129"
+        "cursorPosition" : "150,23",
+        "scrollLine" : "98"
     },
     "relative_order" : 1,
     "source_on_save" : false,
